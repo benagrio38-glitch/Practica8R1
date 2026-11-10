@@ -82,3 +82,15 @@ PS C:\tacho unidad 2 r1\Tarea8_Loteria\loteria_dolorena> flutter test
 Captura de la terminal:
 
 ![flutter test](evidencia/flutter_test.png)
+
+## Evidencia de la app funcionando
+
+| Inicio | Primera carta cantada | Varias cartas marcadas |
+|---|---|---|
+| ![Inicio](evidencia/01_inicio.png) | ![Primera carta](evidencia/02_primera_carta.png) | ![Varias cartas](evidencia/03_varias_cartas.png) |
+
+| Aviso de Lotería | Tabla nueva al jugar de nuevo |
+|---|---|
+| ![Lotería](evidencia/04_loteria.png) | ![Jugar de nuevo](evidencia/05_jugar_de_nuevo.png) |
+
+En la tabla nueva las cartas aparecen en otro orden: la baraja se mezcla en cada partida.
