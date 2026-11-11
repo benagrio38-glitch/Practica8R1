@@ -42,6 +42,82 @@ La lógica del juego está en `lib/logica` y `lib/modelos`. Es Dart puro, sin wi
 
 Refactor que hice en la ronda 3: cambié `removeAt(0)` por `removeLast()` porque es más rápido y las pruebas siguieron pasando igual.
 
+## Rojo y verde por módulo
+
+Cada ronda corre el archivo de pruebas de un módulo, primero en **rojo** (falla) y luego en **verde** (pasa). El código ya estaba terminado, así que el rojo se provocó cambiando temporalmente una línea, indicada en cada ronda. Después se revirtió el cambio con `git checkout` y se volvió a correr el archivo.
+
+### Ronda 1 – Carta (ruta de imagen)
+
+**Archivo de pruebas:** `carta_test.dart`
+
+**Cambio para provocar el fallo:** `carta.dart`: la extensión de la ruta se cambió de `.jpg` a `.png`.
+
+**ROJO** – La prueba falla
+
+![Ronda 1 rojo](evidencia/tdd/r1_rojo.png)
+
+**VERDE** – Se revierte el cambio y las pruebas pasan
+
+![Ronda 1 verde](evidencia/tdd/r1_verde.png)
+
+### Ronda 2 – Baraja
+
+**Archivo de pruebas:** `baraja_test.dart`
+
+**Cambio para provocar el fallo:** `baraja.dart`: se quitó la carta «El Tambor», así que la baraja quedó con 15 cartas.
+
+**ROJO** – La prueba falla
+
+![Ronda 2 rojo](evidencia/tdd/r2_rojo.png)
+
+**VERDE** – Se revierte el cambio y las pruebas pasan
+
+![Ronda 2 verde](evidencia/tdd/r2_verde.png)
+
+### Ronda 3 – Tabla
+
+**Archivo de pruebas:** `tabla_test.dart`
+
+**Cambio para provocar el fallo:** `tabla.dart`: `marcar` dejaba la celda en `false` en lugar de `true`.
+
+**ROJO** – La prueba falla
+
+![Ronda 3 rojo](evidencia/tdd/r3_rojo.png)
+
+**VERDE** – Se revierte el cambio y las pruebas pasan
+
+![Ronda 3 verde](evidencia/tdd/r3_verde.png)
+
+### Ronda 4 – Verificador de patrones
+
+**Archivo de pruebas:** `verificador_patrones_test.dart`
+
+**Cambio para provocar el fallo:** `verificador_patrones.dart`: `fila.every` se cambió por `fila.any`.
+
+**ROJO** – La prueba falla
+
+![Ronda 4 rojo](evidencia/tdd/r4_rojo.png)
+
+**VERDE** – Se revierte el cambio y las pruebas pasan
+
+![Ronda 4 verde](evidencia/tdd/r4_verde.png)
+
+### Ronda 5 – Motor de juego
+
+**Archivo de pruebas:** `motor_juego_test.dart`
+
+**Cambio para provocar el fallo:** `motor_juego.dart`: `haGanado` se asignaba en `false` al completar un patrón.
+
+**ROJO** – La prueba falla
+
+![Ronda 5 rojo](evidencia/tdd/r5_rojo.png)
+
+**VERDE** – Se revierte el cambio y las pruebas pasan
+
+![Ronda 5 verde](evidencia/tdd/r5_verde.png)
+
+Al final, `flutter test` pasa las 19 pruebas (captura en la sección de evidencia).
+
 ## Carpetas
 
 ```
